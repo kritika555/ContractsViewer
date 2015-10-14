@@ -32,9 +32,11 @@
 </body>
 </html>
 <script>
+     base_url = "<?php echo base_url();?>";
+     //console.log(base_url);
 	function jsclick(name,latlon) {		
 		showPosition(latlon);
-		$.post('http://localhost/contract_csv/contract/give_info',{name:name},function(result) {           	
+		$.post(base_url+'contract/give_info',{name:name},function(result) {           	
         	var arr = result.values;
         	var out =  "<table><tr><td>name:</td><td>"+ arr[0]+"</td></tr>"; 
         	out+=   "<tr><td>status:</td><td>"+ arr[1]+"</td></tr>" ; 
